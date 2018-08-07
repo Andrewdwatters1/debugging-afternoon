@@ -14,6 +14,7 @@ let initialState = {
 
 // Reducer
 export default function reducer(state=initialState, action) {
+    console.log(state);
     switch(action.type) {
         case GET_ALL_PRODUCTS_PENDING:
             return Object.assign({}, state, {loading: true});
@@ -28,8 +29,8 @@ export default function reducer(state=initialState, action) {
             let newArray = state.shoppingCart.slice();
             newArray.splice(action.index, 1);
             return Object.assign({}, {shoppingCart: newArray});
-            
-        defualt:
+        
+        default:
             return state;
     }
 }

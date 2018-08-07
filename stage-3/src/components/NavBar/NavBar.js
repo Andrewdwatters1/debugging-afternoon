@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import './NavBar.css';
 import Logo from '../../images/dev-mountain-logo.png'
 import { Link } from 'react-router-dom';
+import StoreFront from '../StoreFront/StoreFront';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import { connect } from 'react-redux';
+
 
 class NavBar extends Component {
     constructor() {
         super();
-
         this.state = {
 
         }
@@ -34,4 +37,11 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+function mapStateToProps(state) {
+    console.log(state);
+    return {
+        state: this.state
+    }
+}
+
+export default connect(mapStateToProps)(NavBar);
